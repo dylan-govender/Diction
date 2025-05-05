@@ -1,22 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
-import nltk
-
-st.image("/workspaces/YouSpeak/images/speakable_logo.png", caption="")
-
-if st.session_state.get("show_success", False):
-    st.session_state.show_success = True  
-
-@st.cache_data(show_spinner="Downloading dependencies...")
-def install_dependencies():
-    try:
-        nltk.data.find('tokenizers/punkt')
-        nltk.data.find('tokenizers/punkt_tab')
-    except LookupError:
-        nltk.download('punkt')
-        nltk.download('punkt_tab')
-
-install_dependencies()
 
 # Title Section
 st.title("About Speakable")
